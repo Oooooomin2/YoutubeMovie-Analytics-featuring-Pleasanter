@@ -1,0 +1,16 @@
+{
+  "name": "pleasanter_ecmascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "npm install -D webpack webpack-cli babel-loader @babel/core @babel/preset-env @babel/cli @babel/polyfill jQuery",
+    "build": "webpack -w --config webpack.dev.config",
+    "release": "webpack -w --config webpack.pro.config"
+  },
+  "author": "",
+  "license": "ISC"
+}
