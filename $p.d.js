@@ -56,7 +56,7 @@ const getRequest = ({
 
 const createRequest = ({
     async = true,
-    id,
+    id = 0,
     data = dataOfCreateAndUpdateRequest,
     done = data => { },
     fail = data => { },
@@ -65,7 +65,7 @@ const createRequest = ({
 
 const updateRequest = ({
     async = true,
-    id,
+    id = 0,
     data = dataOfCreateAndUpdateRequest,
     done = data => { },
     fail = data => { },
@@ -74,7 +74,7 @@ const updateRequest = ({
 
 const deleteRequest = ({
     async = true,
-    id,
+    id = 0,
     data = dataOfBaseRequest,
     done = data => { },
     fail = data => { },
@@ -99,7 +99,7 @@ const usersCreateRequest = ({
 
 const usersUpdateRequest = ({
     async = true,
-    id,
+    id = 0,
     data = dataOfUsersCreateAndUpdateRequest,
     done = data => { },
     fail = data => { },
@@ -108,7 +108,7 @@ const usersUpdateRequest = ({
 
 const usersDeleteRequest = ({
     async = true,
-    id,
+    id = 0,
     data = dataOfBaseRequest,
     done = data => { },
     fail = data => { },
@@ -117,7 +117,7 @@ const usersDeleteRequest = ({
 
 const sendMailRequest = ({
     async = true,
-    id,
+    id = 0,
     data = dataOfSendMailRequest,
     done = data => { },
     fail = data => { },
@@ -135,72 +135,72 @@ const dataOfGetRequest = {
     View: ViewItems
 };
 
-const dataOfUsersGetRequest = ({
-    ApiVersion = 1.1,
-    ApiKey = "",
+const dataOfUsersGetRequest = {
+    ApiVersion: 1.1,
+    ApiKey: "",
     View: ViewUsers
-}) => { }
+}
 
-const dataOfCreateAndUpdateRequest = ({
-    ApiVersion = 1.1,
-    ApiKey = "",
+const dataOfCreateAndUpdateRequest = {
+    ApiVersion: 1.1,
+    ApiKey: "",
     ClassHash: Class,
     NumHash: Num,
     DateHash: Date,
     DescriptionHash: Description,
     CheckHash: Check
-}) => { };
+};
 
-const dataOfUsersCreateAndUpdateRequest = ({
-    ApiVersion = 1.1,
-    ApiKey = "",
-    UserId,
+const dataOfUsersCreateAndUpdateRequest = {
+    ApiVersion: 1.1,
+    ApiKey: "",
+    UserId: 0,
     Ver,
-    LoginId,
-    Name,
-    UserCode,
+    LoginId: "",
+    Name: "",
+    UserCode: "",
     Birthday,
     Gender,
     Language,
     TimeZone,
-    DeptCode,
-    Body,
+    DeptCode: "",
+    Body: "",
     LastLoginTime,
     PasswordExpirationTime,
     PasswordChangeTime,
-    NumberOfLogins,
-    NumberOfDenial,
+    NumberOfLogins: 0,
+    NumberOfDenial: 0,
     TenantManager,
     Disabled,
-    Lockout,
-    LockoutCounter,
-    Comments,
-    Creator,
-    Updator,
+    Lockout: true,
+    LockoutCounter: 0,
+    Comments: "",
+    Creator: 0,
+    Updator: 0,
     CreatedTime,
     UpdatedTime
-}) => { };
+};
 
-const dataOfSendMailRequest = ({
-    ApiVersion = 1.1,
-    ApiKey = "",
-    From,
-    To,
-    Cc,
-    Bcc,
-    Title,
-    Body
-}) => { };
+const dataOfSendMailRequest = {
+    ApiVersion: 1.1,
+    ApiKey: "",
+    From: "",
+    To: "",
+    Cc: "",
+    Bcc: "",
+    Title: "",
+    Body: ""
+};
 
 const ViewItems = {
     ColumnFilterHash: ColumnFilterHashItems,
-    ColumnSorterHash
+    ColumnSorterHash:{}
 };
 
-const ViewUsers = ({
+const ViewUsers = {
     ColumnFilterHash: ColumnFilterHashUsers,
-    ColumnSorterHash
-}) => { };
+    ColumnSorterHash:{}
+};
 
 let SiteId;
 let IssueId;
@@ -381,6 +381,7 @@ let StatusCode;
 let Offset;
 let PageSize;
 let TotalCount;
+let ColumnSorterHash = {};
 
 const ColumnFilterHashItems = {
     SiteId: 0,
@@ -569,7 +570,7 @@ const getResponseData = {
         Offset,
         PageSize,
         TotalCount,
-        Data = {
+        Data: {
             ClassHash: Class,
             NumHash: Num,
             DateHash: Date,
