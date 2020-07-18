@@ -1,4 +1,4 @@
-$p.set = ($control, val) => { };
+$p.set = ($control, val) => $p.set();
 $p.apiGet = getRequest;
 $p.apiCreate = createRequest;
 $p.apiUpdate = updateRequest;
@@ -8,42 +8,42 @@ $p.apiUsersCreate = usersCreateRequest;
 $p.apiUsersUpdate = usersUpdateRequest;
 $p.apiUsersDelete = usersDeleteRequest;
 $p.apiSendMail = sendMailRequest;
-$p.id = () => { };
-$p.send = data => { };
-$p.siteId = () => { };
-$p.getColumnName = name => { };
-$p.getControl = labelName => { };
-$p.getField = labelName => { };
-$p.clearMessage = () => { };
-$p.setMessage = (target, value) => { };
-$p.loginId = () => { };
-$p.userId = () => { };
-$p.userName = () => { };
-$p.referenceType = () => { };
-$p.getGridCell = (id, name) => { };
-$p.getGridColumnIndex = name => { };
-$p.getGridRow = id => { };
-$p.before_validate_Create = () => { };
-$p.before_validate_Update = () => { };
-$p.before_validate_Delete = () => { };
-$p.after_validate_Create = () => { };
-$p.after_validate_Update = () => { };
-$p.after_validate_Delete = () => { };
-$p.before_send_Create = () => { };
-$p.before_send_Update = () => { };
-$p.before_send_Delete = () => { };
-$p.after_send_Create = () => { };
-$p.after_send_Update = () => { };
-$p.after_send_Delete = () => { };
-$p.before_set_Create = () => { };
-$p.before_set_Update = () => { };
-$p.before_set_Delete = () => { };
-$p.after_set_Create = () => { };
-$p.after_set_Update = () => { };
-$p.after_set_Delete = () => { };
-$p.after_set_GridRows = () => { };
-$p.on_editor_load = () => { };
-$p.on_grid_load = () => { };
+$p.id = () => $p.id();
+$p.send = data => $p.send(data);
+$p.siteId = () => $p.siteId();
+$p.getColumnName = name => $p.getColumnName(name);
+$p.getControl = labelName => $p.getControl(labelName);
+$p.getField = labelName => $p.getField(labelName);
+$p.clearMessage = () => $p.clearMessage();
+$p.setMessage = (target, value) => $p.setMessage(target, value);
+$p.loginId = () => $p.loginId();
+$p.userId = () => $p.userId();
+$p.userName = () => $p.userName();
+$p.referenceType = () => $p.referenceType();
+$p.getGridCell = (id, name) => $p.getGridCell(id, name);
+$p.getGridColumnIndex = name => $p.getGridColumnIndex(name);
+$p.getGridRow = id => $p.getGridRow(id);
+$p.events.before_validate_Create = () => { };
+$p.events.before_validate_Update = () => { };
+$p.events.before_validate_Delete = () => { };
+$p.events.after_validate_Create = () => { };
+$p.events.after_validate_Update = () => { };
+$p.events.after_validate_Delete = () => { };
+$p.events.before_send_Create = () => { };
+$p.events.before_send_Update = () => { };
+$p.events.before_send_Delete = () => { };
+$p.events.after_send_Create = () => { };
+$p.events.after_send_Update = () => { };
+$p.events.after_send_Delete = () => { };
+$p.events.before_set_Create = () => { };
+$p.events.before_set_Update = () => { };
+$p.events.before_set_Delete = () => { };
+$p.events.after_set_Create = () => { };
+$p.events.after_set_Update = () => { };
+$p.events.after_set_Delete = () => { };
+$p.events.after_set_GridRows = () => { };
+$p.events.on_editor_load = () => { };
+$p.events.on_grid_load = () => { };
 
 const getRequest = ({
     async = true,
@@ -210,12 +210,12 @@ const dataOfSendMailRequest = {
 
 const ViewItems = {
     ColumnFilterHash: ColumnFilterHashItems,
-    ColumnSorterHash:{}
+    ColumnSorterHash: {}
 };
 
 const ViewUsers = {
     ColumnFilterHash: ColumnFilterHashUsers,
-    ColumnSorterHash:{}
+    ColumnSorterHash: {}
 };
 
 let SiteId;
