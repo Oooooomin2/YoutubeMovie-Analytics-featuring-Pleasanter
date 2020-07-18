@@ -1,51 +1,49 @@
-const $p = {
-    set: ($control, val) => { },
-    apiGet: getRequest,
-    apiCreate: createRequest,
-    apiUpdate: updateRequest,
-    apiDelete: deleteRequest,
-    apiUsersGet: usersGetRequest,
-    apiUsersCreate: usersCreateRequest,
-    apiUsersUpdate: usersUpdateRequest,
-    apiUsersDelete: usersDeleteRequest,
-    apiSendMail: sendMailRequest,
-    id: () => { },
-    send: data => { },
-    siteId: () => { },
-    getColumnName: name => { },
-    getControl: labelName => { },
-    getField: labelName => { },
-    clearMessage: () => { },
-    setMessage: (target, value) => { },
-    loginId: () => { },
-    userId: () => { },
-    userName: () => { },
-    referenceType: () => { },
-    getGridCell: (id, name) => { },
-    getGridColumnIndex: name => { },
-    getGridRow: id => { },
-    before_validate_Create: () => { },
-    before_validate_Update: () => { },
-    before_validate_Delete: () => { },
-    after_validate_Create: () => { },
-    after_validate_Update: () => { },
-    after_validate_Delete: () => { },
-    before_send_Create: () => { },
-    before_send_Update: () => { },
-    before_send_Delete: () => { },
-    after_send_Create: () => { },
-    after_send_Update: () => { },
-    after_send_Delete: () => { },
-    before_set_Create: () => { },
-    before_set_Update: () => { },
-    before_set_Delete: () => { },
-    after_set_Create: () => { },
-    after_set_Update: () => { },
-    after_set_Delete: () => { },
-    after_set_GridRows: () => { },
-    on_editor_load: () => { },
-    on_grid_load: () => { },
-}
+$p.set = ($control, val) => { };
+$p.apiGet = getRequest;
+$p.apiCreate = createRequest;
+$p.apiUpdate = updateRequest;
+$p.apiDelete = deleteRequest;
+$p.apiUsersGet = usersGetRequest;
+$p.apiUsersCreate = usersCreateRequest;
+$p.apiUsersUpdate = usersUpdateRequest;
+$p.apiUsersDelete = usersDeleteRequest;
+$p.apiSendMail = sendMailRequest;
+$p.id = () => { };
+$p.send = data => { };
+$p.siteId = () => { };
+$p.getColumnName = name => { };
+$p.getControl = labelName => { };
+$p.getField = labelName => { };
+$p.clearMessage = () => { };
+$p.setMessage = (target, value) => { };
+$p.loginId = () => { };
+$p.userId = () => { };
+$p.userName = () => { };
+$p.referenceType = () => { };
+$p.getGridCell = (id, name) => { };
+$p.getGridColumnIndex = name => { };
+$p.getGridRow = id => { };
+$p.before_validate_Create = () => { };
+$p.before_validate_Update = () => { };
+$p.before_validate_Delete = () => { };
+$p.after_validate_Create = () => { };
+$p.after_validate_Update = () => { };
+$p.after_validate_Delete = () => { };
+$p.before_send_Create = () => { };
+$p.before_send_Update = () => { };
+$p.before_send_Delete = () => { };
+$p.after_send_Create = () => { };
+$p.after_send_Update = () => { };
+$p.after_send_Delete = () => { };
+$p.before_set_Create = () => { };
+$p.before_set_Update = () => { };
+$p.before_set_Delete = () => { };
+$p.after_set_Create = () => { };
+$p.after_set_Update = () => { };
+$p.after_set_Delete = () => { };
+$p.after_set_GridRows = () => { };
+$p.on_editor_load = () => { };
+$p.on_grid_load = () => { };
 
 const getRequest = ({
     async = true,
@@ -54,7 +52,7 @@ const getRequest = ({
     done = (data = getResponseData) => { },
     fail = data => { },
     always = data => { }
-}) => { };
+}) => $p.apiGet();
 
 const createRequest = ({
     async = true,
@@ -63,7 +61,7 @@ const createRequest = ({
     done = data => { },
     fail = data => { },
     always = data => { }
-}) => { };
+}) => $p.apiCreate();
 
 const updateRequest = ({
     async = true,
@@ -72,7 +70,7 @@ const updateRequest = ({
     done = data => { },
     fail = data => { },
     always = data => { }
-}) => { };
+}) => $p.apiUpdate();
 
 const deleteRequest = ({
     async = true,
@@ -81,7 +79,7 @@ const deleteRequest = ({
     done = data => { },
     fail = data => { },
     always = data => { }
-}) => { };
+}) => $p.apiDelete();
 
 const usersGetRequest = ({
     async = true,
@@ -89,7 +87,7 @@ const usersGetRequest = ({
     done = (data = getResponseData) => { },
     fail = data => { },
     always = data => { }
-}) => { };
+}) => $p.apiUsersGet();
 
 const usersCreateRequest = ({
     async = true,
@@ -97,7 +95,7 @@ const usersCreateRequest = ({
     done = data => { },
     fail = data => { },
     always = data => { }
-}) => { };
+}) => $p.apiUsersCreate();
 
 const usersUpdateRequest = ({
     async = true,
@@ -106,7 +104,7 @@ const usersUpdateRequest = ({
     done = data => { },
     fail = data => { },
     always = data => { }
-}) => { };
+}) => $p.apiUsersUpdate();
 
 const usersDeleteRequest = ({
     async = true,
@@ -115,7 +113,7 @@ const usersDeleteRequest = ({
     done = data => { },
     fail = data => { },
     always = data => { }
-}) => { };
+}) => $p.apiUsersDelete();
 
 const sendMailRequest = ({
     async = true,
@@ -124,38 +122,38 @@ const sendMailRequest = ({
     done = data => { },
     fail = data => { },
     always = data => { }
+}) => $p.apiSendMail();
+
+const dataOfBaseRequest = ({
+    ApiVersion = 1.1,
+    ApiKey = ""
 }) => { };
 
-const dataOfBaseRequest = {
-    ApiVersion : 1.1,
-    ApiKey: ""
-}
+const dataOfGetRequest = ({
+    ApiVersion = 1.1,
+    ApiKey = "",
+    View = ViewItems
+}) => { }
 
-const dataOfGetRequest = {
-    ApiVersion : 1.1,
-    ApiKey: "",
-    View : ViewItems
-}
+const dataOfUsersGetRequest = ({
+    ApiVersion = 1.1,
+    ApiKey = "",
+    View: ViewUsers
+}) => { }
 
-const dataOfUsersGetRequest = {
-    ApiVersion : 1.1,
-    ApiKey: "",
-    View : ViewUsers
-}
+const dataOfCreateAndUpdateRequest = ({
+    ApiVersion = 1.1,
+    ApiKey = "",
+    ClassHash: Class,
+    NumHash: Num,
+    DateHash: Date,
+    DescriptionHash: Description,
+    CheckHash: Check
+}) => { };
 
-const dataOfCreateAndUpdateRequest = {
-    ApiVersion : 1.1,
-    ApiKey: "",
-    ClassHash : Class,
-    NumHash : Num,
-    DateHash : Date,
-    DescriptionHash : Description,
-    CheckHash : Check
-}
-
-const dataOfUsersCreateAndUpdateRequest = {
-    ApiVersion : 1.1,
-    ApiKey: "",
+const dataOfUsersCreateAndUpdateRequest = ({
+    ApiVersion = 1.1,
+    ApiKey = "",
     UserId,
     Ver,
     LoginId,
@@ -181,30 +179,30 @@ const dataOfUsersCreateAndUpdateRequest = {
     Updator,
     CreatedTime,
     UpdatedTime
-}
+}) => { };
 
-const dataOfSendMailRequest = {
-    ApiVersion : 1.1,
-    ApiKey: "",
+const dataOfSendMailRequest = ({
+    ApiVersion = 1.1,
+    ApiKey = "",
     From,
     To,
     Cc,
     Bcc,
     Title,
     Body
-}
+}) => { };
 
-const ViewItems = {
-    ColumnFilterHash : ColumnFilterHashItems,
+const ViewItems = ({
+    ColumnFilterHash = ColumnFilterHashItems,
     ColumnSorterHash
-}
+}) => { };
 
-const ViewUsers = {
-    ColumnFilterHash : ColumnFilterHashUsers,
+const ViewUsers = ({
+    ColumnFilterHash: ColumnFilterHashUsers,
     ColumnSorterHash
-}
+}) => { };
 
-const ColumnFilterHashItems = {
+const ColumnFilterHashItems = ({
     SiteId,
     IssueId,
     ResultId,
@@ -354,36 +352,10 @@ const ColumnFilterHashItems = {
     CheckW,
     CheckX,
     CheckY,
-    CheckZ,
-    CheckA,
-    CheckB,
-    CheckC,
-    CheckD,
-    CheckE,
-    CheckF,
-    CheckG,
-    CheckH,
-    CheckI,
-    CheckJ,
-    CheckK,
-    CheckL,
-    CheckM,
-    CheckN,
-    CheckO,
-    CheckP,
-    CheckQ,
-    CheckR,
-    CheckS,
-    CheckT,
-    CheckU,
-    CheckV,
-    CheckW,
-    CheckX,
-    CheckY,
     CheckZ
-}
+}) => { };
 
-const ColumnFilterHashUsers = {
+const ColumnFilterHashUsers = ({
     UserId,
     Ver,
     LoginId,
@@ -409,27 +381,27 @@ const ColumnFilterHashUsers = {
     Updator,
     CreatedTime,
     UpdatedTime
-}
+}) => { };
 
-const getResponseData = {
+const getResponseData = ({
     StatusCode,
-    Response = Response,
-};
+    Response,
+}) => { };
 
-const Response = {
+const Response = ({
     Offset,
     PageSize,
     TotalCount,
-    Data : {
-        ClassHash : Class,
-        NumHash : Num,
-        DateHash : Date,
-        DescriptionHash : Description,
-        CheckHash : Check
+    Data = {
+        ClassHash: Class,
+        NumHash: Num,
+        DateHash: Date,
+        DescriptionHash: Description,
+        CheckHash: Check
     }
-};
+}) => { };
 
-const Class = {
+const Class = ({
     ClassA,
     ClassB,
     ClassC,
@@ -456,9 +428,9 @@ const Class = {
     ClassX,
     ClassY,
     ClassZ
-}
+}) => { };
 
-const Num = {
+const Num = ({
     NumA,
     NumB,
     NumC,
@@ -485,9 +457,9 @@ const Num = {
     NumX,
     NumY,
     NumZ
-}
+}) => { };
 
-const Date = {
+const Date = ({
     DateA,
     DateB,
     DateC,
@@ -514,9 +486,9 @@ const Date = {
     DateX,
     DateY,
     DateZ
-}
+}) => { };
 
-const Description = {
+const Description = ({
     DescriptionA,
     DescriptionB,
     DescriptionC,
@@ -543,9 +515,9 @@ const Description = {
     DescriptionX,
     DescriptionY,
     DescriptionZ
-}
+}) => { };
 
-const Check = {
+const Check = ({
     CheckA,
     CheckB,
     CheckC,
@@ -572,7 +544,4 @@ const Check = {
     CheckX,
     CheckY,
     CheckZ
-}
-
-
-module.exports = $p
+}) => { };
