@@ -148,7 +148,22 @@ const dataOfCreateAndUpdateRequest = {
     NumHash: Num,
     DateHash: Date,
     DescriptionHash: Description,
-    CheckHash: Check
+    CheckHash: Check,
+    Title: "",
+    Body: "",
+    StartTime,
+    CompletionTime,
+    WorkValue,
+    ProgressRate,
+    RemainingWorkValue,
+    Status: 0,
+    Manager: 0,
+    Owner: 0,
+    Comments: "",
+    Creator: 0,
+    Updator: 0,
+    CreatedTime,
+    ItemTitle: ""
 };
 
 const dataOfUsersCreateAndUpdateRequest = {
@@ -166,6 +181,7 @@ const dataOfUsersCreateAndUpdateRequest = {
     DeptCode: "",
     Body: "",
     LastLoginTime,
+    Password: "",
     PasswordExpirationTime,
     PasswordChangeTime,
     NumberOfLogins: 0,
@@ -194,12 +210,12 @@ const dataOfSendMailRequest = {
 
 const ViewItems = {
     ColumnFilterHash: ColumnFilterHashItems,
-    ColumnSorterHash: {}
+    ColumnSorterHash:{}
 };
 
 const ViewUsers = {
     ColumnFilterHash: ColumnFilterHashUsers,
-    ColumnSorterHash: {}
+    ColumnSorterHash:{}
 };
 
 let SiteId;
