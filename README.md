@@ -11,7 +11,7 @@ ECMAScript/JavaScript/webpack/Babel
 ## スクリプトの補完機能
 
 プリザンターで使用できる関数の補完が可能です。  
-補完に対応している関数は[プリザンター公式ユーザマニュアルのスクリプト欄](https://pleasanter.net/fs/publishes/418092/index?View=%7b%22Id%22%3a1%2c%22Name%22%3a%22%u6a19%u6e96%22%2c%22ColumnFilterHash%22%3a%7b%22ClassA%22%3a%22%5b%272200%27%5d%22%7d%2c%22ColumnSorterHash%22%3a%7b%22ClassA%22%3a0%2c%22Title%22%3a0%7d%7d)にある関数のみです(もちろんJavaScriptですので、ここで表示される補完関数以外の関数を使用しても問題ありません。)
+補完に対応している関数は[プリザンター公式ユーザマニュアルのスクリプト欄](https://pleasanter.net/fs/publishes/418092/index?View=%7b%22Id%22%3a1%2c%22Name%22%3a%22%u6a19%u6e96%22%2c%22ColumnFilterHash%22%3a%7b%22ClassA%22%3a%22%5b%272200%27%5d%22%7d%2c%22ColumnSorterHash%22%3a%7b%22ClassA%22%3a0%2c%22Title%22%3a0%7d%7d)にある関数が主です(もちろんJavaScriptですので、ここで表示される補完関数以外の関数を使用しても問題ありません。)
 
 ![関数補完](https://user-images.githubusercontent.com/63548353/87864280-5d45e200-c9a1-11ea-91fc-16162572b982.png)
 
