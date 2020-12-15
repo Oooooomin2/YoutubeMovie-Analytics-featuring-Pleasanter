@@ -1,52 +1,47 @@
-# Pleasanter-Script アシスタント
+# Youtube分析アプリ featuring-Pleasanter
 
-Pleasanterのスクリプト開発において、プリザンター独自の関数補完やES6以降のJavaScriptで書いた際のIE対応などに役立つかと思います。（もちろんES6以前のJavaScriptでも補完機能は利用できます！）  
-あくまで個人の趣味で作ったものですので完璧ではありませんが、ぼちぼちブラッシュアップしていけたらなと思っています!(^^)!
+本アプリは国産OSSのWebデータベースであるPleasanterを用いてYoutubeの動画を解析するアプリです。  
+![分析レコード2](https://user-images.githubusercontent.com/63548353/102189549-26490d80-3efa-11eb-8a27-65bf4a3fdc69.png)
 
-技術キーワード  
-ECMAScript/JavaScript/webpack/Babel
+## 本アプリで出来ること
 
-# 機能一覧
+・対象Youtubeチャンネルの再生回数の多い順に動画を表示する（5つ）  
+・対象YoutubeチャンネルのGoodの多い順に動画を表示する（5つ）  
+・対象Youtubeチャンネルの動画投稿が新しい順に表示する（5つ）  
 
-## スクリプトの補完機能
+## 本アプリの前提条件
 
-プリザンターで使用できる関数の補完が可能です。  
-補完に対応している関数は[プリザンター公式ユーザマニュアルのスクリプト欄](https://pleasanter.net/fs/publishes/418092/index?View=%7b%22Id%22%3a1%2c%22Name%22%3a%22%u6a19%u6e96%22%2c%22ColumnFilterHash%22%3a%7b%22ClassA%22%3a%22%5b%272200%27%5d%22%7d%2c%22ColumnSorterHash%22%3a%7b%22ClassA%22%3a0%2c%22Title%22%3a0%7d%7d)にある関数が主です(もちろんJavaScriptですので、ここで表示される補完関数以外の関数を使用しても問題ありません。)
+・国産OSSのWebデータべースであるPleasanterが利用可能であること。  
+https://pleasanter.net/fs/publishes/420234/edit  
 
-![関数補完](https://user-images.githubusercontent.com/63548353/87864280-5d45e200-c9a1-11ea-91fc-16162572b982.png)
+## 環境構築手順
+本手順はVisual Studio Codeを使用します。  
 
-必要なパラメータの型も見ることが出来ます。  
-以下に注意点も記載します。
+1. ソースコードをクローンします。  
+1. YoutubeMovie-Analytics-featuring-Pleasanter/src/data.jsonを開き、YoutubeAPIのAPIKeyを入力します。  
+1. トップフォルダに戻り、VisualStudioCodeのターミナルにて「npm run release」と打ち、コンパイルを行います。
+1. Pleasanterのトップ画面を開きます。  
+1. サイトパッケージのインポート機能を用い、本アプリのsitepackage\Youtube分析アプリ.jsonをインポートします。  
+![インポート後](https://user-images.githubusercontent.com/63548353/102185623-b1270980-3ef4-11eb-80d9-9f70700a1d3d.png)
 
-* あくまでJavaScriptであり、明確な型定義をされているわけではありませんので違う型の値を入力してもエラーにはなりません。
-* 表示されている全てのパラメータが入力必須というわけではありません。
-* 全てのパラメータではなく、使用頻度の高そうなパラメータのみ補完されるようにしております（~~全部書き出すのがめんどかった。~~ たくさん補完候補を書いても混乱するかと思いまして。）
+1. フォルダの中身は以下のようになっています。  
+![フォルダの中身](https://user-images.githubusercontent.com/63548353/102185784-ef242d80-3ef4-11eb-8921-d421c1547048.png)  
 
-![関数補完2](https://user-images.githubusercontent.com/63548353/87864306-9bdb9c80-c9a1-11ea-9cb3-d31b829051a4.png)
+1. 投稿者マスタテーブルにてレコードを新規作成します。下記の赤枠の2項目「投稿者名」「チャンネルId」をそれぞれ入力してください。  
+![項目の説明](https://user-images.githubusercontent.com/63548353/102186061-69ed4880-3ef5-11eb-8b75-2fb265c74796.png)   
+チャンネルIdは各YoutubeチャンネルのURL(https://www.youtube.com/channel/xxxxxxx)のxxxxxxx部分です。 
 
-## webpack + BabelによるIE対応(IE11)のJavaScriptへの変換
+1. 動画分析テーブルを開き「管理」>「テーブルの管理」を開き、スクリプトタブを開きます。
+そこで「新規作成」ボタンをクリックし、任意のタイトルを入力後に3にて作成されたdistフォルダ内のindex.bundle.jsの中身をスクリプト項目に入れて「変更」ボタンをクリックします。  
+1. 画面下の「更新」ボタンをクリックします。
 
-本パッケージをダウンロード（クローン）後、npm run start コマンドで必要なモジュールが全てインストールされます。  
-その後、npm run build, npm run release等のコマンドを使用するとdistフォルダが新しく作られ、そちらにIE対応のJavaScriptが出力されます。  
+1. 投稿者マスタテーブルにてレコードを作成後に動画分析テーブルにてレコードを作成します。  
+![分析レコード](https://user-images.githubusercontent.com/63548353/102187692-aa4dc600-3ef7-11eb-9f13-279e5276586e.png)  
 
-※npm run build は開発用のスクリプトへ、npm run release は本番用で圧縮されたスクリプトが表示されます。後者の方がサイズも小さいので本番に適用する際はこちらを載せるのが良いかと思います。
+1. レコード作成後、以下のような画面に切り替わります。  
+![分析レコード2](https://user-images.githubusercontent.com/63548353/102189549-26490d80-3efa-11eb-8a27-65bf4a3fdc69.png)  
 
-![packagejson](https://user-images.githubusercontent.com/63548353/87864582-e7437a00-c9a4-11ea-86f0-330175b32c79.png)
+## 制約
 
-# 推奨エディタ  
-
-おそらく大体は大丈夫かと思います。とりあえずVSCodeとVisualStudioで動くのは確認しました。
-
-# 操作方法
-
-1. 本パッケージをクローン、もしくはダウンロードします。
-1. package.jsonのあるフォルダへ移動し、ターミナル等で「npm run start」と入力し、Enterを押します。
-1. package.jsonのdevDependencies欄に色々入ったのを確認します。  
-![modules](https://user-images.githubusercontent.com/63548353/87864741-178c1800-c9a7-11ea-9346-923abc677cfc.png) 
-
-1. src配下にスクリプトを書き、ターミナル等で「npm run build」「npm run release」と実行します。
-1. 新たにdistフォルダが作成され、その中に[実行したファイルと同じ名前].bundle.jsというファイルがあることを確認します。
-
-※初期設定ではindex.jsのみしか読み込まれません。複数ファイルを使用する際はwebpack.dev.config.jsとwebpack.pro.config.jsの赤枠部分を書き換える必要がありますのでご了承ください。
-
-![webpack](https://user-images.githubusercontent.com/63548353/87864796-08599a00-c9a8-11ea-945a-fee66f20abe6.png)
+・動画は5つ固定表示となっております。  
+・カテゴリは「再生回数順」「Good順」「投稿日時順」の3パターンのみです。  
