@@ -19,7 +19,7 @@ https://pleasanter.net/fs/publishes/420234/edit
 
 1. ソースコードをクローンします。  
 1. YoutubeMovie-Analytics-featuring-Pleasanter/src/data.jsonを開き、YoutubeAPIのAPIKeyを入力します。  
-1. トップフォルダに戻り、VisualStudioCodeのターミナルにて「npm run release」と打ち、コンパイルを行います。
+1. トップフォルダに戻り、VisualStudioCodeのターミナルにてYoutubeMovie-Analytics-featuring-Pleasanterフォルダに移り、「npm run release」と打ち、コンパイルを行います。
 1. Pleasanterのトップ画面を開きます。  
 1. サイトパッケージのインポート機能を用い、本アプリのsitepackage\Youtube分析アプリ.jsonをインポートします。  
 ![インポート後](https://user-images.githubusercontent.com/63548353/102185623-b1270980-3ef4-11eb-80d9-9f70700a1d3d.png)
