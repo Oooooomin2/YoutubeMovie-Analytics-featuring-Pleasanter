@@ -1,7 +1,7 @@
 module.exports = {
   mode: 'production',
   entry: {
-    index: ['@babel/polyfill', './src/index.js']
+    index: ['@babel/polyfill', './src/index.js', './src/model/YoutubeAPI.js', './src/model/CreateHtml.js']
   },
   output: {
     path: __dirname + '/dist',

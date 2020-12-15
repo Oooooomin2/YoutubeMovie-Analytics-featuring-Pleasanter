@@ -8,9 +8,19 @@
   },
   "scripts": {
     "start": "npm install -D webpack webpack-cli babel-loader @babel/core @babel/preset-env @babel/cli @babel/polyfill jquery",
-    "build": "webpack -w --config webpack.dev.config",
-    "release": "webpack -w --config webpack.pro.config"
+    "build": "webpack -w --config webpack.dev.config.js",
+    "release": "webpack -w --config webpack.pro.config.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "jquery": "^3.5.1",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
+  }
 }
