@@ -14,6 +14,8 @@
 ・国産OSSのWebデータべースであるPleasanterが利用可能であること。  
 https://pleasanter.net/fs/publishes/420234/edit  
 
+・YoutubeAPIを操作するにあたってApiKeyを取得済みであること。
+
 ## 環境構築手順
 本手順はVisual Studio Codeを使用します。  
 
